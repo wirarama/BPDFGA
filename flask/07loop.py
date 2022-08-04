@@ -5,5 +5,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    data = ["jeruk","apel","salak","semangka","nanas"]
+    data = [
+    ["jeruk",20000],
+    ["apel",67000],
+    ["salak",12000],
+    ["semangka",40000],
+    ["nanas",56000]
+    ]
     return render_template('loop.html',data=data)

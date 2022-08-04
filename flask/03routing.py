@@ -9,3 +9,11 @@ def index():
 @app.route('/hello')
 def hello():
     return 'Hello, World'
+
+@app.route('/produk')
+def produk():
+	out = "<ul>"
+	for x in range(100):
+		out += "<li>produk no "+str(x)+"</li>"
+	out += "</ul>"
+	return out

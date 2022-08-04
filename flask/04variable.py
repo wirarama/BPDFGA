@@ -5,9 +5,10 @@ app = Flask(__name__)
 from markupsafe import escape
 
 @app.route('/user/<username>')
-def show_user_profile(username):
+@app.route('/user/<username>/<nama>')
+def show_user_profile(username,nama=None):
     # show the user profile for that user
-    return f'User {escape(username)}'
+    return f'User {escape(username)} dan nama {escape(nama)}'
 
 @app.route('/post/<int:post_id>')
 def show_post(post_id):

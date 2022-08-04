@@ -9,8 +9,11 @@ from werkzeug.utils import secure_filename
 @app.route('/', methods=['GET', 'POST'])
 def uploadfile():
     if request.method == 'POST':
-        f = request.files['namafile']
-        #f.save(f"/Users/wirarama/python/FGA/BPDFGA/flask/upload/{secure_filename(f.filename)}")
-        return render_template('formfile.html',pesan="test")
+        try:
+            f = request.files['namafile']
+            f.save(f"/Users/wirarama/python/FGA/BPDFGA/flask/upload/{secure_filename(f.filename)}")
+            return render_template('formfile.html',pesan="Upload Sukses")
+        except:
+            return render_template('formfile.html',pesan="Upload Gagal")
     else:
         return render_template('formfile.html')

@@ -10,7 +10,7 @@
   <div = class="container">
     <ul class="list-group">
     {% for x in data %}
-        <li class="list-group-item">{{ x }}</li>
+        <li class="list-group-item"><strong>{{ x[0] }}</strong> seharga {{ x[1] }}</li>
     {% endfor %}
     </ul>
 </div>
