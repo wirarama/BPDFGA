@@ -1,0 +1,2 @@
+export FLASK_APP=escape.py
+/usr/local/anaconda3/bin/flask run
