@@ -17,3 +17,7 @@ def uploadfile():
             return render_template('formfile.html',pesan="Upload Gagal")
     else:
         return render_template('formfile.html')
+if __name__ == "__main__":
+    app.jinja_env.auto_reload = True
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.run()

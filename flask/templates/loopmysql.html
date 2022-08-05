@@ -16,6 +16,8 @@
       <th scope="col">Suhu</th>
       <th scope="col">Kelembaban</th>
       <th scope="col">Tanggal</th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +28,7 @@
       <td>{{ x[2] }}</td>
       <td>{{ x[3] }}</td>
       <td><a href="/edit/{{ x[0] }}">edit</a></td>
+      <td><a href="/del/{{ x[0] }}">del</a></td>
     </tr>
     {% endfor %}
     </tbody>

@@ -16,3 +16,8 @@ def index():
     mycursor.execute("SELECT * FROM tabelnum")
     myresult = mycursor.fetchall()
     return render_template('loopmysql.html',data=myresult)
+    
+if __name__ == "__main__":
+    app.jinja_env.auto_reload = True
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.run()

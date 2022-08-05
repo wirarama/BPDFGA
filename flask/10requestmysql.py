@@ -1,9 +1,7 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template,redirect,request
 
 app = Flask(__name__)
-
-from flask import request
 
 import mysql.connector
 mydb = mysql.connector.connect(host="localhost",user="mpi",password="mpi",database="mpitest")
@@ -16,9 +14,11 @@ def login():
             sql = "INSERT INTO tabelnum (suhu,kelembaban) VALUES (%s, %s)"
             mycursor.execute(sql,(request.form['suhu'],request.form['kelembaban']))
             mydb.commit()
-            return render_template('formmysql.html',pesan="Input Skses")
+            return redirect('http://127.0.0.1:5000/')
+            #return render_template('formmysql.html',pesan="Input Skses")
         except:
-            return render_template('formmysql.html',pesan="Input Gagal")
+            return redirect('http://127.0.0.1:5000/')
+            #return render_template('formmysql.html',pesan="Input Gagal")
     else:
         return render_template('formmysql.html')
 
@@ -27,3 +27,8 @@ def index():
     mycursor.execute("SELECT * FROM tabelnum")
     myresult = mycursor.fetchall()
     return render_template('loopmysql.html',data=myresult)
+
+if __name__ == "__main__":
+    app.jinja_env.auto_reload = True
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.run()
