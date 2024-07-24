@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Selamat pagi</p>"
+    return "<h1>Selamat pagi</h1><h2>sub judul</h2>"
 
 if __name__ == "__main__":
     app.jinja_env.auto_reload = True

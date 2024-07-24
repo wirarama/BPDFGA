@@ -8,8 +8,8 @@ def index():
     import mysql.connector
     mydb = mysql.connector.connect(
       host="localhost",
-      user="mpi",
-      password="mpi",
+      user="root",
+      password="",
       database="mpitest"
     )
     mycursor = mydb.cursor()

@@ -1,14 +1,14 @@
 from flask import Flask
 
 app = Flask(__name__)
-
+nav = '<a href="">Home</a> | <a href="/hello">Hello</a> | <a href="/produk">Produk</a>'
 @app.route('/')
 def index():
-    return 'Index Page'
+    return nav+'Index Page'
 
 @app.route('/hello')
 def hello():
-    return 'Hello, World'
+    return nav+'Hello, World'
 
 @app.route('/produk')
 def produk():
@@ -16,7 +16,7 @@ def produk():
 	for x in range(100):
 		out += "<li>produk no "+str(x)+"</li>"
 	out += "</ul>"
-	return out
+	return nav+out
 
 if __name__ == "__main__":
     app.jinja_env.auto_reload = True

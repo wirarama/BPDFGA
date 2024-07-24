@@ -20,6 +20,10 @@ def show_subpath(subpath):
     # show the subpath after /path/
     return f'Subpath {escape(subpath)}'
 
+@app.errorhandler(404) 
+def not_found(e):
+    return '<h1>Maaf, halaman yang anda tuju tidak ditemukan</h1>'
+
 if __name__ == "__main__":
     app.jinja_env.auto_reload = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True

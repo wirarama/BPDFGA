@@ -11,7 +11,7 @@ def uploadfile():
     if request.method == 'POST':
         try:
             f = request.files['namafile']
-            f.save(f"/Users/wirarama/python/FGA/BPDFGA/flask/upload/{secure_filename(f.filename)}")
+            f.save(f"C:\\Users\\wirar\\OneDrive\\Documents\\GitHub\\BPDFGA\\flask\\upload\\{secure_filename(f.filename)}")
             return render_template('formfile.html',pesan="Upload Sukses")
         except:
             return render_template('formfile.html',pesan="Upload Gagal")
